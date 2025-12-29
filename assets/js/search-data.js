@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "WIP.",
+          description: "A growing collection of your cool projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "Short CV",
+          description: "Brief CV. Full curriculum vitae (in Czech) is in PDF format.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -51,24 +51,30 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-finally-i-added-automatic-deployment-to-this-webpage-and-základy-geomorfologie-textbook-also-i-updated-the-publication-list",
+        },{id: "post-end-of-year-2025-blog-post",
+        
+          title: "End of year 2025 blog post",
+        
+        description: "End of year reflections and updates",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/End-of-year-2025/";
+          
+        },
+      },{id: "news-finally-i-added-automatic-deployment-to-this-webpage-and-základy-geomorfologie-textbook-also-i-updated-the-publication-list",
           title: 'Finally I added automatic deployment to this webpage and Základy geomorfologie textbook! Also...',
           description: "",
-          section: "News",},{id: "projects-flysch-carpathians",
-          title: 'Flysch Carpathians',
-          description: "a project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/Carpathians/";
-            },},{id: "projects-patagonie",
+          section: "News",},{id: "projects-patagonie",
           title: 'Patagonie',
           description: "with background image",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/Patagonie/";
+              window.location.href = "/projects/1_patagonie/";
+            },},{id: "projects-flysch-carpathians",
+          title: 'Flysch Carpathians',
+          description: "a project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_carpathians/";
             },},{
         id: 'social-email',
         title: 'email',
@@ -82,13 +88,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://github.com/MichalBrezny", "_blank");
-        },
-      },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
         },
       },{
         id: 'social-instagram',
