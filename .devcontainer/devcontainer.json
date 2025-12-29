@@ -4,6 +4,11 @@
   "name": "Jekyll",
   "image": "mcr.microsoft.com/devcontainers/jekyll",
 
+  // Mount the MichalBrezny_webpage-deploy repository to /workspaces/MichalBrezny_webpage-deploy 
+  "mounts": [
+    "source=${localWorkspaceFolder}/../MB_WebPage-deploy,target=/workspaces/MB_WebPage-deploy,type=bind"
+  ],
+
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
