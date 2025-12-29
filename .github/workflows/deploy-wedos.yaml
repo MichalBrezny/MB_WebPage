@@ -1,0 +1,36 @@
+name: Deploy to WEDOS (FTPS)
+
+on:
+  push:
+    branches: ["site"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (site branch)
+        uses: actions/checkout@v4
+
+      - name: Upload via FTPS to WEDOS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.WEDOS_FTP_SERVER }}
+          username: ${{ secrets.WEDOS_FTP_USERNAME }}
+          password: ${{ secrets.WEDOS_FTP_PASSWORD }}
+
+          protocol: ftps
+          port: 21
+
+          # Pokud tě FTP účet hází do rootu kde je složka "www", nech /www/
+          # Pokud tě hází rovnou do webrootu, změň na /
+          server-dir: /www/domains/michalbrezny.com/
+
+          # Nahraj celé repo (site branch je jen build)
+          local-dir: ./
+
+          # Ať se na hosting neposílá git + workflow soubory
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/.devcontainer/**
+            **/README*
