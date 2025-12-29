@@ -19,3 +19,14 @@ services:
       - .:/srv/jekyll
     environment:
       - JEKYLL_ENV=development
+  
+  build:
+    image: amirpourmand/al-folio:latest
+    build: .
+    volumes:
+      - .:/srv/jekyll
+      - ../MB_WebPage-deploy:/out
+    environment:
+      - JEKYLL_ENV=production
+    command: >
+      bash -lc "jekyll build -d /out"

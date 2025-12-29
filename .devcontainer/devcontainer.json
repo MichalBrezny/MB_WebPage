@@ -4,6 +4,10 @@
   "name": "Jekyll",
   "image": "mcr.microsoft.com/devcontainers/jekyll",
 
+  "mounts": [
+    "source=${localWorkspaceFolder}/../MB_WebPage_site,target=/workspaces/MB_WebPage_site,type=bind"
+  ],
+  
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
